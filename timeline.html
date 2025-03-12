@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ไทม์ไลน์แห่งรัก 💖</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe4e1;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            color: #ff6699;
+        }
+        .timeline {
+            list-style: none;
+            padding: 0;
+        }
+        .timeline li {
+            background: #fff0f5;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .back-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #ff6699;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .back-btn:hover {
+            background: #ff3366;
+        }
+        #timer {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ff3366;
+            margin-top: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                color: #ff3366;
+            }
+            50% {
+                transform: scale(1.1);
+                color: #ff6699;
+            }
+            100% {
+                transform: scale(1);
+                color: #ff3366;
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop hidden>
+        <source src="เพลง ลกอม - วชราวล [official audio].mp3" type="audio/mpeg">
+        เบราว์เซอร์ของคุณไม่รองรับการเล่นเสียง
+    </audio>
+    <div class="container">
+        <h1>💖 ไทม์ไลน์แห่งรัก 💖</h1>
+        <ul class="timeline">
+            <li><strong>วันแรกที่เจอ</strong> - วันที่ 16 สิงหาคม 2024 💕</li>
+            <li><strong>เดตแรก</strong> - วันที่ 8 มีนาคม 2025 🍽️</li>
+            <li><strong>เป็นแฟนกันวันที่</strong> - วันที่ 8 มีนาคม 2025 ✈️</li>
+        </ul>
+        <h2>⏳ เวลาที่ผ่านไปตั้งแต่ 8 มีนาคม 2025</h2>
+        <div id="timer">กำลังโหลด...</div>
+        <a href="index.html" class="back-btn">⬅️ กลับหน้าแรก</a>
+    </div>
+
+    <script>
+        function updateTime() {
+            const startDate = new Date("March 8, 2025 00:00:00").getTime();
+            const now = new Date().getTime();
+            const elapsed = now - startDate;
+
+            const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
+
+            document.getElementById("timer").innerHTML = `${days} วัน ${hours} ชั่วโมง ${minutes} นาที ${seconds} วินาที`;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>

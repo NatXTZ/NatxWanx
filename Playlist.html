@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            color: #ff6699;
+        }
+        .playlist {
+            list-style: none;
+            padding: 0;
+        }
+        .playlist li {
+            background: #fff0f5;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .play-button, .pause-button, .stop-button {
+            padding: 8px 16px;
+            background: #ff6699;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .play-button:hover, .pause-button:hover, .stop-button:hover {
+            background: #ff3366;
+        }
+        audio {
+            margin-top: 20px;
+            width: 100%;
+        }
+        .back-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #ff6699;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .back-btn:hover {
+            background: #ff3366;
+        }
+        .console-output {
+            margin-top: 20px;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 14px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎶 For Our Love 🎶</h1>
+        <ul class="playlist">
+            <li>
+                <span>เพลง ลูกอม - วัชราวลี</span>
+                <button class="play-button" onclick="playSong('song1')">เล่น</button>
+            </li>
+            <li>
+                <span>เพลง หยุด - Groove Riders</span>
+                <button class="play-button" onclick="playSong('song2')">เล่น</button>
+            </li>
+            <li>
+                <span>เพลง ก้อนหินละเมอ - Soul After Six</span>
+                <button class="play-button" onclick="playSong('song3')">เล่น</button>
+            </li>
+            <li>
+                <span>เพลง Ultraviolence - Lana Del Rey</span>
+                <button class="play-button" onclick="playSong('song4')">เล่น</button>
+            </li>
+        </ul>
+        <audio id="audioPlayer" controls>
+            <source id="songSource" src="" type="audio/mpeg">
+            เบราว์เซอร์ของคุณไม่รองรับการเล่นเสียง
+        </audio>
+
+        <a href="index.html" class="back-btn">⬅️ กลับหน้าแรก</a>
+    </div>
+
+    <script>
+        function playSong(songId) {
+            const audioPlayer = document.getElementById("audioPlayer");
+            const songSource = document.getElementById("songSource");
+            
+            let songURL = "";
+            
+            if (songId === "song1") {
+                songURL = "เพลง ลกอม - วชราวล [official audio].mp3";  // เปลี่ยนเป็น URL ของเพลงลูกอม - วัชราวลี
+            } else if (songId === "song2") {
+                songURL = "Groove Riders - หยด (Official Lyric Video).mp3";  // เปลี่ยนเป็น URL ของเพลงอีกนิด - The TOYS
+            } else if (songId === "song3") {
+                songURL = "Soul After Six - กอนหนละเมอ (Official Lyric Video).mp3";  // เปลี่ยนเป็น URL ของเพลงรักเธอเสมอ - 25 Hours
+            } else if (songId === "song4") {
+                songURL = "Lana Del Rey - Ultraviolence.mp3";  // เปลี่ยนเป็น URL ของเพลงรักเธอเสมอ - 25 Hours
+            }
+
+            songSource.src = songURL;  // เปลี่ยนแหล่งที่มาของเพลง
+            audioPlayer.load();  // โหลดเพลงใหม่
+            audioPlayer.play();  // เล่นเพลง
+        }
+    </script>
+</body>
+</html>

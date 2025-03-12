@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="effect.html">
+    <link rel="stylesheet" href="style.css">
+    <title>Memories 💖</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            margin: auto;
+        }
+        h1 {
+            color: #ff6699;
+        }
+        .btn {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #ff6699;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .btn:hover {
+            background: #ff3366;
+        }
+
+        .wrapper {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .round {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #01b4f9;
+            border: 5px solid #01b4f9;
+            opacity: 0;
+            box-shadow: 0 0 100px #01b4f9, 0 0 10px #01b4f9, 0 0 20px #01b4f9;
+            animation: animate 4s linear infinite, ani-2 2s linear infinite;
+        }
+
+        .round:nth-child(1) { left: 5%; animation-delay: 0.5s; }
+        .round:nth-child(2) { left: 65%; animation-delay: 1s; }
+        .round:nth-child(3) { left: 90%; animation-delay: 1.5s; }
+        .round:nth-child(4) { left: 18%; animation-delay: 2s; }
+        .round:nth-child(5) { left: 93%; animation-delay: 2.5s; }
+        .round:nth-child(6) { left: 52%; animation-delay: 3s; }
+        .round:nth-child(7) { left: 65%; animation-delay: 3.5s; }
+        .round:nth-child(8) { left: 35%; animation-delay: 4s; }
+        .round:nth-child(9) { left: 85%; animation-delay: 4.5s; }
+        .round:nth-child(10) { left: 45%; animation-delay: 5s; }
+        .round:nth-child(11) { left: 36%; animation-delay: 5.5s; }
+        .round:nth-child(12) { left: 72%; animation-delay: 6s; }
+        .round:nth-child(13) { left: 14%; animation-delay: 6.5s; }
+        .round:nth-child(14) { left: 70%; animation-delay: 7s; }
+
+        @keyframes animate {
+            0% { top: 0; opacity: 1; }
+            20% { top: 20%; opacity: 0.8; }
+            40% { top: 40%; opacity: 0.6; }
+            60% { top: 60%; opacity: 0.4; }
+            80% { top: 80%; opacity: 0.2; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        @keyframes ani-2 {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(2.5); }
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop hidden>
+        <source src="เพลง ลกอม - วชราวล [official audio].mp3" type="audio/mpeg">
+        เบราว์เซอร์ของคุณไม่รองรับการเล่นเสียง
+    </audio>
+
+    <div class="container">
+        <h1>💖 Our Memories 💖</h1>
+        <p>บันทึกเรื่องราวของเรา ตั้งแต่วันแรกจนถึงวันนี้ 🌸</p>
+        <img src="flower.jpg" alt="Memory" style="width:50%; border-radius: 10px;">
+        <a href="timeline.html" class="btn">📅 Timeline</a>
+        <a href="gallery.html" class="btn">📸 Our gallery</a>
+        <a href="Playlist.html" class="btn">🎧 Playlist</a>
+        <a href="diary.html" class="btn">📖 Diary</a>
+    </div>
+
+    <div class="wrapper">
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+    </div>
+</body>
+</html>
